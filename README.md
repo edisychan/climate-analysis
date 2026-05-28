@@ -11,3 +11,5 @@ To install a copy of this repository, use the git clone command, e.g.
 git clone git@github.com:edisychan/climate-analysis.git
 
 ```
+
+**This code is currently in development and not all features will work**
