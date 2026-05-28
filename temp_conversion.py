@@ -1,10 +1,28 @@
 # Todo: Code is a bit unclear
 
-def Fc(x):
-    Y = (x - 32) * (5 / 9)
-    return Y
+def convert_fahr_to_celsius(fahr):
+    """
+    Given a temperature in Fahrenheit, converts it to Celsius
 
-def FK(x):
-    y = Fc(x)
-    z = y + 273.15
-    return z
+    :param fahr: The temperature in Fahrenheit
+    :raises ValueError: If the temperature is below absolute zero
+    :return: The temperature in Celsius
+    """
+    celsius = (fahr - 32) * (5 / 9)
+    if celsius < -273.15:
+        # If temperature is below absolute zero, throw an error
+        raise ValueError(
+            f"Trying to convert impossible temperature: {fahr}F"
+        )
+    return celsius
+
+def convert_fahr_to_kelvin(fahr):
+    """
+    Given a temperature in Fahrenheit, converts it to Kelvin
+
+    :param fahr: The temperature in Fahrenheit
+    :return: The temperature in Kelvin
+    """
+    celsius = convert_fahr_to_celsius(fahr)
+    kelvin = celsius + 273.15
+    return kelvin
